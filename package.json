@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm-run-all --parallel test:watch open lint:watch",
+    "open": "babel-node tools/server.js",
+    "lint": "esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "storybook": "start-storybook -p 8080"
   },
   "repository": {
@@ -20,16 +26,21 @@
     "@kadira/storybook": "^2.21.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "7.1.1",
+    "babel-jest": "18.0.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
+    "enzyme": "2.6.0",
     "eslint": "3.12.2",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-react": "6.8.0",
     "eslint-watch": "2.1.14",
+    "express": "^4.15.2",
+    "jest": "18.1.0",
     "node-sass": "^4.5.2",
     "npm-run-all": "3.1.2",
+    "open": "0.0.5",
     "postcss-apply": "^0.6.1",
     "postcss-color-function": "^3.0.0",
     "postcss-custom-media": "^5.0.1",
@@ -42,13 +53,20 @@
     "postcss-nested": "^1.0.1",
     "postcss-nesting": "^2.3.1",
     "prop-types": "15.5.8",
-    "react": "15.0.0",
-    "react-dom": "15.0.0",
+    "react": "15.4.1",
+    "react-addons-test-utils": "15.4.1",
+    "react-dom": "15.4.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "webpack": "2.2.1"
   },
-   "eslintConfig": {
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy",
+      "^.+\\.(gif|ttf|eot|svg|woff|woff2|ico)$": "<rootDir>/tools/fileMock.js"
+    }
+  },
+  "eslintConfig": {
     "root": true,
     "extends": [
       "eslint:recommended",
