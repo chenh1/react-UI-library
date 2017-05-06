@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel open",
+    "start": "npm-run-all --parallel test:watch open lint:watch",
     "open": "babel-node tools/server.js",
+    "lint": "esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch",
     "test": "jest",
+    "test:watch": "npm run test -- --watch",
     "storybook": "start-storybook -p 8080"
   },
   "repository": {
