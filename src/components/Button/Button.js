@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Button.scss';
 
-const Button = ({type, onClick}) => {
+const Button = ({type, onClick, text}) => {
     return (
-        <button className={'button-' + type} onClick={onClick}>Test</button>
+        <button className={styles['theme-' + type]} onClick={onClick}>{text}</button>
     );
 }
 

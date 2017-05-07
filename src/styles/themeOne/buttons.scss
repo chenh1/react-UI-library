@@ -1,0 +1,42 @@
+@import "./general.scss";
+
+%button-one {
+    align-items: center;
+    background: #ed2f58;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    transform: translateX(12px);
+
+    &:before,
+    &:after {
+        content: '';
+        transition: .1s;
+    }
+
+    &:before {
+        border-top: 24px solid #ed2f58;
+        border-bottom: 12px solid transparent;
+        border-right: 12px solid #ed2f58;     
+    }
+
+    &:after {
+        border-top: 12px solid transparent;
+        border-left: 12px solid #ed2f58;
+        border-bottom: 24px solid #ed2f58;  
+    }
+
+    &:hover {
+        &:before {
+            transform: translateX(-100%);
+        }
+
+        &:after {
+            transform: translateX(100%);
+        }
+    }
+}

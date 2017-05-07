@@ -1,0 +1,10 @@
+@import "../../styles/themeOne/buttons";
+@import "../../styles/themeTwo/buttons";
+
+.theme-one {
+    @extend %button-one;
+}
+
+.theme-two {
+    @extend %button-two;
+}

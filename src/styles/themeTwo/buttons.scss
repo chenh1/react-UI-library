@@ -1,0 +1,63 @@
+@import "./general.scss";
+
+%button-two {
+    align-items: center;
+    background: #2d2d2d;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    transform: translateX(12px);
+
+    &:before,
+    &:after {
+        content: '';
+        transition: .1s;
+    }
+
+    &:before {
+        border-top: 24px solid #2d2d2d;
+        border-bottom: 12px solid transparent;
+        border-right: 12px solid #2d2d2d;     
+    }
+
+    &:after {
+        border-top: 12px solid transparent;
+        border-left: 12px solid #2d2d2d;
+        border-bottom: 24px solid #2d2d2d;  
+    }
+
+    &:hover {
+        animation: blueGlow .6s ease-in-out infinite alternate;
+
+        &:before {
+            transform: translateX(-100%);
+        }
+
+        &:after {
+            transform: translateX(100%);
+        }
+    }
+}
+
+@keyframes blueGlow {
+    0%  {text-shadow: 
+        0 0 2px #ffffff, 
+        0 0 4px #ffffff, 
+        0 0 8px #ffffff, 
+        0 0 12px #2f91f9, 
+        0 0 20px #2f91f9, 
+        0 0 28px #2f91f9;
+        }
+    100%{text-shadow: 
+        0 0 1px #ffffff, 
+        0 0 2px #ffffff, 
+        0 0 4px #ffffff, 
+        0 0 6px #2f91f9, 
+        0 0 10px #2f91f9, 
+        0 0 14px #2f91f9;
+        }
+}

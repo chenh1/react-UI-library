@@ -4,5 +4,8 @@ import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Buttons', module)
     .add('one', () => {
-        return <Button type='one'/>;
+        return <Button type='one' text='Click Me'/>;
+    })
+    .add('two', () => {
+        return <Button type='two' text='Click Me'/>;
     });
