@@ -1,0 +1,32 @@
+@import "../general.scss";
+
+%input-one {
+    display: inline-flex;
+    font-family: 'Abel', sans-serif;
+
+    label {
+        color: #ed2f58;
+        position: absolute;
+        transform: translateY(-12%);
+        transition: .25s;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid #ed2f58;
+        font-family: 'Abel', sans-serif;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:focus,
+        &:valid {
+            & ~ label {
+                font-size: 12px;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}

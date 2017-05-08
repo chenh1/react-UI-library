@@ -6,6 +6,6 @@ const Button = ({type, onClick, text}) => {
     return (
         <button className={styles['theme-' + type]} onClick={onClick}>{text}</button>
     );
-}
+};
 
 export default Button;

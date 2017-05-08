@@ -14,6 +14,7 @@
 
     &:before,
     &:after {
+        align-self: stretch;
         content: '';
         transition: .1s;
     }
