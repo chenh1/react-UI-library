@@ -4,5 +4,5 @@ import { storiesOf } from '@kadira/storybook';
 
 storiesOf('Inputs', module)
     .add('one', () => {
-        return <Input />;
+        return <Input type='one' label='Placeholder'/>;
     });

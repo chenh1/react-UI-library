@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Input.scss';
 
-const Input = ({}) => {
+const Input = ({type, label}) => {
     return (
-        <span className={styles['input-one']}>
+        <span className={styles['input-' + type]}>
             <input type="text" required="required"/>
-            <label>Placeholder</label>
+            <label>{label}</label>
         </span>
     );
 };
