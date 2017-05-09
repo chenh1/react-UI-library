@@ -1,0 +1,32 @@
+@import "../general.scss";
+
+%input-two {
+    display: inline-flex;
+    font-family: 'Rajdhani', sans-serif;
+
+    label {
+        color: #2d2d2d;
+        position: absolute;
+        transform: translateY(-12%);
+        transition: .25s;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px solid #2d2d2d;
+        font-family: 'Rajdhani', sans-serif;
+
+        &:focus {
+            outline: 0;
+        }
+
+        &:focus,
+        &:valid {
+            & ~ label {
+                font-size: 12px;
+                transform: translateY(-100%);
+            }
+        }
+    }
+}

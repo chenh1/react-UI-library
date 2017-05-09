@@ -1,5 +1,10 @@
 @import "../../styles/themeOne/inputs";
+@import "../../styles/themeTwo/inputs";
 
 .input-one {
     @extend %input-one;
+}
+
+.input-two {
+    @extend %input-two;
 }
